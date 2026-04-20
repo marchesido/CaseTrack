@@ -8,8 +8,8 @@ Certifique-se de ter o [Docker](https://www.docker.com/) e o [Docker Compose](ht
 
 ### 1. Clonar o repositório
 ```bash
-git clone <url-do-repositorio>
-cd <nome-do-diretorio>
+git clone --recurse-submodules https://github.com/marchesido/CaseTrack.git
+cd .\CaseTrack
 ```
 
 ### 2. Configurar as variáveis de ambiente

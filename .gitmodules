@@ -1,8 +1,6 @@
 [submodule "gestao-audiovisual"]
-    path = gestao-audiovisual
-    url = https://github.com/marchesido/gestao-audiovisual.git
-    branch = main
+	path = gestao-audiovisual
+	url = https://github.com/marchesido/gestao-audiovisual.git
 [submodule "TechAcademy-5-Api-Audiovisual"]
-    path = TechAcademy-5-Api-Audiovisual
-    url = https://github.com/marchesido/TechAcademy-5-Api-Audiovisual.git
-    branch = main
+	path = TechAcademy-5-Api-Audiovisual
+	url = https://github.com/marchesido/TechAcademy-5-Api-Audiovisual.git

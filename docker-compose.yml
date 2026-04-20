@@ -1,0 +1,45 @@
+services:
+
+  db:
+    image: postgres:18
+    container_name: audiovisual-gestao-db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: audiovisual-gestao-db
+    networks:
+      - techacademy-network
+
+  api:
+    build: ./TechAcademy-5-Api-Audiovisual
+    container_name: nest-js-app
+    ports:
+      - "3000:3000"
+    environment:
+      JWT_SECRET: ""
+      JWT_EXPIRATION_TIME: ""
+      DB_HOST: audiovisual-gestao-db
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres123
+      DB_NAME: audiovisual-gestao-db
+    depends_on:
+      - db
+    networks:
+      - techacademy-network
+
+  frontend:
+    build: ./gestao-audiovisual
+    container_name: react-vite-app
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - techacademy-network
+
+networks:
+  techacademy-network:
+    driver: bridge

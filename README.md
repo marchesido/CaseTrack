@@ -29,20 +29,13 @@ Este comando irá baixar as imagens necessárias, construir as imagens locais pa
 Após a inicialização, os serviços estarão disponíveis nos seguintes endereços:
 
 - **Frontend (React/Vite):** [http://localhost](http://localhost)
+- **Usuário:** `admin@example.com`
+- **Senha:** `admin123`
 - **Backend (API NestJS):** Backend (API NestJS): http://localhost:3000/api#/
 - **Banco de Dados (PostgreSQL):** `localhost:5433`
   - **Usuário:** `postgres`
   - **Senha:** `postgres123`
   - **Database:** `audiovisual-gestao-db`
-
----
-
- 🔑 Credenciais de Acesso (Administrador)
-
-Após executar o comando de [Seeding](#popular-o-banco-de-dados-seeds), você poderá acessar o sistema com as seguintes credenciais de administrador:
-
-- **Usuário:** `admin@example.com`
-- **Senha:** `admin123`
 
 ---
 

@@ -29,35 +29,13 @@ Este comando irá baixar as imagens necessárias, construir as imagens locais pa
 Após a inicialização, os serviços estarão disponíveis nos seguintes endereços:
 
 - **Frontend (React/Vite):** [http://localhost](http://localhost)
-- **Backend (API NestJS):** [http://localhost:3000](http://localhost:3000)
+- **Backend (API NestJS):** [http://localhost:3000/api#/](http://localhost:3000/api#/)
 - **Banco de Dados (PostgreSQL):** `localhost:5433`
   - **Usuário:** `postgres`
   - **Senha:** `postgres123`
   - **Database:** `audiovisual-gestao-db`
 
 ---
-
-## 🛠️ Comandos Úteis
-
-### Popular o banco de dados (Seeds)
-Para inserir dados de teste no banco de dados (7 registros por entidade), execute o comando abaixo enquanto os containers estiverem rodando:
-```bash
-docker exec -it nest-js-app npm run seed
-```
-
-### Executar Migrations
-Caso precise rodar as migrations manualmente:
-```bash
-docker exec -it nest-js-app npm run migration:run
-```
-
-### Parar os containers
-```bash
-docker-compose down
-```
-
----
-
 ## 📖 Estrutura do Projeto
 
 - `/TechAcademy-5-Api-Audiovisual`: Código fonte da API (Backend).

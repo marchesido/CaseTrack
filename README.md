@@ -8,8 +8,8 @@ Certifique-se de ter o [Docker](https://www.docker.com/) e o [Docker Compose](ht
 
 ### 1. Clonar o repositório
 ```bash
-git clone --recurse-submodules https://github.com/marchesido/CaseTrack.git
-cd .\CaseTrack
+git clone <url-do-repositorio>
+cd <nome-do-diretorio>
 ```
 
 ### 2. Configurar as variáveis de ambiente
@@ -29,14 +29,24 @@ Este comando irá baixar as imagens necessárias, construir as imagens locais pa
 Após a inicialização, os serviços estarão disponíveis nos seguintes endereços:
 
 - **Frontend (React/Vite):** [http://localhost](http://localhost)
-- **Backend (API NestJS):** [http://localhost:3000/api#/](http://localhost:3000/api#/)
+- **Backend (API NestJS):** Backend (API NestJS): http://localhost:3000/api#/
 - **Banco de Dados (PostgreSQL):** `localhost:5433`
   - **Usuário:** `postgres`
   - **Senha:** `postgres123`
   - **Database:** `audiovisual-gestao-db`
 
 ---
-## 📖 Estrutura do Projeto
+
+ 🔑 Credenciais de Acesso (Administrador)
+
+Após executar o comando de [Seeding](#popular-o-banco-de-dados-seeds), você poderá acessar o sistema com as seguintes credenciais de administrador:
+
+- **Usuário:** `admin@example.com`
+- **Senha:** `admin123`
+
+---
+
+ 📖 Estrutura do Projeto
 
 - `/TechAcademy-5-Api-Audiovisual`: Código fonte da API (Backend).
 - `/gestao-audiovisual`: Código fonte da aplicação web (Frontend).

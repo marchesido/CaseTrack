@@ -1,41 +1,44 @@
 services:
-
-  db:
-    image: postgres:18
-    container_name: audiovisual-gestao-db
+  mysqldb:
+    image: mysql:8.0
+    container_name: audiovisual-gestao-db-mysql
+    command: --default-authentication-plugin=mysql_native_password
     ports:
-      - "5433:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres123
-      POSTGRES_DB: audiovisual-gestao-db
+      - "3306:3306"
+    env_file: .env
     networks:
       - techacademy-network
+    volumes:
+      - mysql_data:/var/lib/mysql
 
   api:
     build: ./TechAcademy-5-Api-Audiovisual
     container_name: nest-js-app
-    ports:
-      - "3000:3000"
-    environment:
-      JWT_SECRET: ""
-      JWT_EXPIRATION_TIME: ""
-      DB_HOST: audiovisual-gestao-db
-      DB_PORT: 5432
-      DB_USERNAME: postgres
-      DB_PASSWORD: postgres123
-      DB_NAME: audiovisual-gestao-db
+    env_file: .env
     depends_on:
-      - db
+      - mysqldb
     networks:
       - techacademy-network
 
   frontend:
     build: ./gestao-audiovisual
     container_name: react-vite-app
+    depends_on:
+      - api
+    networks:
+      - techacademy-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
     depends_on:
+      - frontend
       - api
     networks:
       - techacademy-network
@@ -43,3 +46,7 @@ services:
 networks:
   techacademy-network:
     driver: bridge
+
+volumes:
+  mysql_data:
+  dbeaver_data:
